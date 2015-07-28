@@ -27,7 +27,10 @@ var config = {
 				loaders: ['babel']
 			}
 		]
-	}
+	},
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({minimize: true})
+  ]
 };
 
 gulp.task('webpack', function(done) {
