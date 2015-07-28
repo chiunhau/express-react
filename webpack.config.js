@@ -7,10 +7,12 @@ var config = {
 		filename: 'main.js'
 	},
 	module: {
-		loaders: [{
-			test: /\.jsx$/,
-			loaders: ['babel']
-		}]
+		loaders: [
+			{
+				test: /\.jsx$/,
+				loaders: ['babel']
+			}
+		]
 	}
 };
 
