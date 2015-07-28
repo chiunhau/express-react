@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var gutil = require('gulp-util')
-var sass = require('gulp-ruby-sass');
+var sass = require('gulp-sass');
 var webpack = require("webpack");
 var nodemon = require('gulp-nodemon');
 
@@ -10,14 +10,15 @@ var paths = {
 };
 
 gulp.task('styles', function() {
-	return sass('src/sass/main.scss')
+	return gulp.src('src/sass/*.scss')
+    .pipe(sass().on('error', sass.logError))
 		.pipe(gulp.dest('public/stylesheets'));
 });
 
 var config = {
-	entry: './src/index.jsx',
+	entry: './src/jsx/index.jsx',
 	output: {
-		path: './public/build',
+		path: './public/javascripts',
 		filename: 'main.js'
 	},
 	module: {

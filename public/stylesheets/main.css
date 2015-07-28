@@ -1,6 +1,2 @@
-.hello {
-  color: red; }
-  .hello .world {
-    color: #000; }
-  .hello .hey {
-    color: #fff; }
+#content {
+  margin-top: 50px; }

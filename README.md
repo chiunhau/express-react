@@ -4,7 +4,7 @@
 #### 前端
 -	React.js
 - SCSS/SASS
-- Bootstrap Sass (TODO)
+- Bootstrap Sass
 -	Flux (TODO)
 - React Router (TODO)
 - D3.js (TODO)
