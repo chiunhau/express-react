@@ -10,13 +10,13 @@ var paths = {
 };
 
 gulp.task('styles', function() {
-	return gulp.src('src/sass/*.scss')
+	return gulp.src('./src/sass/*.scss')
     .pipe(sass().on('error', sass.logError))
 		.pipe(gulp.dest('public/stylesheets'));
 });
 
 var config = {
-	entry: './src/jsx/index.jsx',
+	entry: './src/main.jsx',
 	output: {
 		path: './public/javascripts',
 		filename: 'main.js'

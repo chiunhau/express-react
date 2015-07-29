@@ -8,6 +8,7 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var Router = require('react-router');
 var React = require('react');
+var ReactApp = React.createFactory(require('./src/jsx/index.jsx'));
 var app = express();
 
 // view engine setup
@@ -22,11 +23,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// app.use('/', routes);
-// app.use('/users', users);
 
-app.use( function (req, res) {  
-  res.render('index', {title: "index"});
+app.get('/', function (req, res) {
+  var reactHtml = React.renderToString(ReactApp);
+  res.render('index', {reactOutput: reactHtml});
 });
 
 
