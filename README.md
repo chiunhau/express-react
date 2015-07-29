@@ -5,8 +5,8 @@
 -	React.js
 - SCSS/SASS
 - Bootstrap Sass
+- React Router
 -	Flux (TODO)
-- React Router (TODO)
 - D3.js (TODO)
 - Parse Javascript SDK (TODO)
 
