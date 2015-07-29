@@ -52,5 +52,6 @@ gulp.task('watch', function() {
 });
 
 gulp.task('default', function() {  
-    gulp.start('styles', 'webpack');
+    // gulp.start('styles', 'webpack');
+    gulp.start('styles');
 });

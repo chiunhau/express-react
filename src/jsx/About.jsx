@@ -2,15 +2,14 @@ var React = require('react');
 var Router = require('react-router');
 var RouteHandler = Router.RouteHandler;
 
-var Content = React.createClass({
+var About = React.createClass({
   render: function() {
   	return (
-			<div className="content">
-				<h1>Hellllo Worlddd!!!~~~zzzz</h1>
-				<RouteHandler />
+			<div className="about">
+				<h1>About</h1>
 			</div>
   	);
   }
 });
 
-module.exports = Content;
+module.exports = About;

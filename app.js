@@ -4,8 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-var routes = require('./routes/index');
-var users = require('./routes/users');
+var routes = require('./routes');
 var Router = require('react-router');
 var React = require('react');
 var app = express();
@@ -25,8 +24,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use('/', routes);
 // app.use('/users', users);
 
-app.use( function (req, res) {  
-  res.render('index', {title: "index"});
+app.use((req, res) => {
+  Router.run(routes, req.path, function(Handler, state) {
+    res.send('<!DOCTYPE html>' + React.renderToString(<Handler path={req.path} />));
+  });
 });
 
 
