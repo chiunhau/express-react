@@ -10,7 +10,7 @@ var paths = {
 };
 
 gulp.task('styles', function() {
-	return gulp.src('./src/sass/*.scss')
+	return gulp.src(paths.styles)
     .pipe(sass().on('error', sass.logError))
 		.pipe(gulp.dest('public/stylesheets'));
 });
@@ -46,10 +46,15 @@ gulp.task('webpack', function(done) {
   });
 });
 
-gulp.task('watch', function() {
+gulp.task('watch-webpack', function() {
+  gulp.start('webpack');
   gulp.watch(paths.jsx_scripts, ['webpack']);
-  gulp.watch(paths.styles, ['styles']);
 });
+
+gulp.task('watch', function() {
+  gulp.start('styles');
+  gulp.watch(paths.styles, ['styles']);
+})
 
 gulp.task('default', function() {  
     gulp.start('styles', 'webpack');

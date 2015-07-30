@@ -6,14 +6,13 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+var React = require('react');
+var Router = require('react-router');
+var RouteHandler = Router.RouteHandler;
 
 require('node-jsx').install({extension: '.jsx'});
 
-var Router = require('react-router');
-var React = require('react');
-var RouteHandler = Router.RouteHandler;
 var routes = require('./src/routes.jsx');
-var ReactApp = React.createElement(require('./src/components/App.jsx'));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -34,9 +33,8 @@ app.get('/', function (req, res) {
     var markup = React.renderToString(handler); // html string
     res.render('index', { reactOutput: markup });
   });
-
+  // res.render('index');
 });
-
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
