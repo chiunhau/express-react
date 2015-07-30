@@ -1,20 +1,17 @@
 var React = require('react');
 var Router = require('react-router');
-var Route = Router.Route;	
 var RouteHandler = Router.RouteHandler;
 
-
+console.log("hrello");
 var Navbar = require('./Navbar.jsx');
-var About = require('./About.jsx');
-var Login = require('./Login.jsx');
 
 var App = React.createClass({
   render: function() {
     return (
       <div className="app">
         <Navbar />
+        APP
         <div className="container">
-          <RouteHandler />
         </div>
       </div>
     );
@@ -23,10 +20,3 @@ var App = React.createClass({
 
 
 module.exports = App;
-
-
-
-
-Router.run(routes, Router.HistoryLocation, function(Handler, state) {
-  React.render(<Handler/>, document.body);
-});
